@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your App</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/_remake.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+<body>
+  {{#if currentUser}}
+    <a href="/user/logout" class = "my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 border border-blue-700 rounded">Logout</a>
+  {{else}}
+    <a class="nav__button my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 border border-blue-700 rounded" href="/user/signup">Sign up</a>
+    &nbsp;
+    <a class="nav__button my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 border border-blue-700 rounded" href="/user/login">Log in</a>
+  {{/if}}
+  {{!-- Show errors --}}
+  {{#if flashErrors }}
+    {{#each flashErrors }}
+      <div class = "my-2 mx-1 bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">{{ this }}</div>
+    {{/each}}
+  {{/if}}
+  {{!-- Show success messages --}}
+  {{#if flashSuccesses }}
+    {{#each flashSuccesses }}
+      <div>{{ this }}</div>
+    {{/each}}
+  {{/if}}
+  {{> yield }}
+  {{#if isPageAuthor}}
+    {{!-- Prevent loading the Remake framework if the page isn't editable --}}
+    <script src="/assets/js/vendor/Sortable.min.js"></script>
+    <script src="/assets/js/vendor/crostini.min.js"></script>
+    <script src="/remake/js/remake.min.js"></script>
+    <script src="/assets/js/remake-init.js"></script>
+  {{/if}}
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
