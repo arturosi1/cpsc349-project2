@@ -1,7 +1,23 @@
-<h1>Welcome to my app!</h1>
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-col px-10 py-10 justify-center items-center">
+    <div class="w-full md:w-2/3 flex flex-col mb-2 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to the Habit Creator and Tracker</h1>
+      
+      <p class="mb-2 leading-relaxed">
+        This webapp is made via Remake using HTML and Tailwind CSS. In addition, we utilized CSS blocks from Tailblocks.
+      </p>
+      <div class="flex">
+      </div>
+    </div>
+  </div>
+</section>
+
 <ul>
   {{#if currentUser}}
-    <li><a href="/{{currentUser.details.username}}">Go to your dashboard</a></li>
+    <li><a href="/{{currentUser.details.username}}"> 
+      <br>
+      <h1 class="text-2xl text-center font-medium underline" > <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Launch Application </button></h1></a>
+    </li>
   {{else}}
     <li><a href="/user/signup">Sign up for an account</a></li>
   {{/if}}

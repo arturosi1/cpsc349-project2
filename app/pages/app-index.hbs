@@ -8,3 +8,143 @@
       </nav>
     </div>
   </header>
+
+  
+<div class="lg:w-2/3 mx-auto">
+  <div class="flex flex-wrap w-full bg-gray-100 py-10 px-10 relative mb-4 rounded-lg">
+    <div class="text-center relative z-10 w-full content-center">
+      <div class="text-2xl bold text-center "> <h1> Habit Creator </h1></div>
+      <div><br><hr></div><br>
+        <h2> A habit I want to form is </h2>
+        <p 
+                object 
+                key:profile-name="@innerText" 
+                edit:profile-name:without-remove
+                default:profile-name="[Habit name]"
+                class = "text-blue-600"
+              >{{default profileName "[Habit name]"}}             
+        </p>
+        <br>
+        <h2> This habit is important to me because</h2>
+        <p 
+                object 
+                key:profile-important="@innerText" 
+                edit:profile-important:without-remove
+                class = "text-blue-600"
+                default:profile-important="[I want to improve in...]"
+              >{{default profileImportant "[I want to improve in...]"}}
+              
+        </p>
+        <br>
+        <h2> To get started I can</h2>
+        <p 
+                object 
+                key:profile-stepone="@innerText" 
+                edit:profile-stepone:without-remove
+                class = "text-blue-600"
+                default:profile-stepone="[...]"
+              >{{default profileStepone "[...]"}}
+              
+        </p>
+
+        </p>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="lg:w-2/3 mx-auto grid grid-cols-2 gap-5">
+  <div class = "bg-gray-100 py-10 px-10 relative mb-4 rounded-lg border text-center">
+    <div object>
+      <h2 class="text-xl bold text-center " >The benefits of {{default profileName "[Habit name]"}} include</h2>
+      <br>
+      <ul array key="benefits" sortable class = "text-blue-600">
+        {{#for benefit in benefits}}
+          <li object key:text="@innerText" edit:text>
+            {{default benefit.text "[Benefit]"}}
+          </li>
+        {{/for}}
+      </ul>
+      <br>
+      <button new:benefit class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-1 px-3 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add Benefit</button>   
+    </div>
+  </div>
+  <div class = "bg-gray-100 py-20 px-10 relative mb-4 rounded-lg border text-center">
+    
+      <div object key:portfolio-theme="Classic">
+      <div class="text-xl bold" > This habit is for the </div>
+      <br><hr><br>
+        <div><label><input type="radio" value="Classic" update:portfolio-theme name="portfolio-theme" checked> Short-term future</label></div>
+        <div><label><input type="radio" value="Modern" update:portfolio-theme name="portfolio-theme"> Long-term future </label></div>
+        <div><label><input type="radio" value="Artistic" update:portfolio-theme name="portfolio-theme"> Both </label></div>
+      </div>
+
+      <br><hr><br>
+
+      <div object key:importance>
+      <div class="text-xl bold"> This habit is _______ to me</b></div><br>
+        <div><label><input type="radio" value="Important"            update:portfolio-theme name="portfolio-theme" > Important</label></div>
+        <div><label><input type="radio" value="Somewhat important"   update:portfolio-theme name="portfolio-theme" checked> Somewhat Important</label></div>
+        <div><label><input type="radio" value="Not very important"   update:portfolio-theme name="portfolio-theme"> Not Very Important</label></div>
+      </div>
+
+  </div>
+  
+</div>
+   
+    <div class="lg:w-2/3 mx-auto">
+      <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4 rounded-lg">
+        <div class="text-center relative z-10 w-full">
+          <h1 class="text-2xl bold text-center "> Habit Cards</h1>
+          <br>
+            <center>
+              <div><hr></div>
+              <div object key:top-info="@innerText" edit:top-info:without-remove >
+                {{topInfo}}
+              </div>
+              <div><hr></div>
+          
+              <div array key="days" sortable="days">
+                {{#for day in days}}
+                  <br>
+                  <div object key:day-heading="@search" default:day-heading="A Project" >
+
+                    <p class = "font-medium" target:day-heading="@innerText" edit:day-heading>
+                      {{default day.dayHeading "New Card"}}
+                    </p>
+
+                    <div key="cards" array sortable="cards">
+                      {{#for card in day.cards}}
+                        <div object key:card-text="@search" edit:card-text >
+                          <p target:card-text="@innerText">
+                            {{default card.cardText "New Habit"}}
+                          </p>
+                        </div>
+                      {{/for}}
+                    </div>
+
+                    <button new:card class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" > + Habit </button>
+                  </div>
+
+                  <div><hr></div>
+                {{/for}}
+              </div>
+              <div>
+                  <br><button new:day class="bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full"> + Card </button>
+              </div>
+            </center>
+        </div>
+      </div>
+    </div>
+</section>
+
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <p> Made with Remake and Tailwind CSS</span></p>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">CPSC 349 - Group 23</p>
+    </p>
+  </div>
+</footer>
