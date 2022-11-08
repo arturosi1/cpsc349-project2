@@ -105,7 +105,7 @@
 
               <div array key="days" sortable="days" class="grid grid-cols-4 gap-4">
                 {{#for day in days}}
-                  <div object key:day-heading="@search" default:day-heading="A Project" class="border-4 p-5 pl-0 pr-0">
+                  <div object key:day-heading="@search" default:day-heading="A Project" class="border-4 p-5 pl-0 pr-0 rounded-lg bg-slate-400">
 
                     <p class = "font-medium" target:day-heading="@innerText" edit:day-heading>
                       {{default day.dayHeading "New Day"}}
