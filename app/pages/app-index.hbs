@@ -13,6 +13,7 @@
 <div class="lg:w-2/3 mx-auto">
   <div class="flex flex-wrap w-full bg-gray-100 py-10 px-10 relative mb-4 rounded-lg">
     <div class="text-center relative z-10 w-full content-center">
+      
       <div class="text-2xl bold text-center "> <h1> Habit Creator </h1></div>
       <div><br></div>
         <h2> A couple of habits I want to form are: </h2>
@@ -84,8 +85,10 @@
                         <div object key:card-text="@search" edit:card-text >
                           <p target:card-text="@innerText">
                             {{default card.cardText "New Habit"}}
+                            <input type="checkbox">
                           </p>
                         </div>
+                      
                       {{/for}}
                     </div>
 

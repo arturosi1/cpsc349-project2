@@ -84,6 +84,12 @@
       <h1 class="text-2xl text-center font-medium underline" > <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Launch Application </button></h1></a>
     </li>
   {{else}}
-    <li><a href="/user/signup">Sign up for an account</a></li>
+  <div class="flex justify-center">
+    <li><br><br>
+    <a href="/user/signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Sign up for an account</a>
+    <a>or</a>
+    <a href="/user/login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Login</a>
+    </li>
+  </div>
   {{/if}}
 </ul>
